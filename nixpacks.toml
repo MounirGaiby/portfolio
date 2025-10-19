@@ -16,7 +16,7 @@ commands = [
 
 [phases.start]
 commands = [
-  "export PATH=$PATH:/root/.nix-profile/sbin && nginx -g 'daemon off;' -c /app/nginx.conf"
+  "/root/.nix-profile/sbin/nginx -g 'daemon off;' -c /app/nginx.conf"
 ]
 
 
