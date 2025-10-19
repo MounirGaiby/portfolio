@@ -1,0 +1,16 @@
+{
+  "short_name": "Mounir Gaiby",
+  "name": "Mounir Gaiby - Software Engineer",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "description": "Software Engineer portfolio - Building elegant solutions to complex problems"
+}
