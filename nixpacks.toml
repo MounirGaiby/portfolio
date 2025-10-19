@@ -1,0 +1,26 @@
+[phases.setup]
+commands = [
+  "echo 'Setup phase: nothing special'"
+]
+
+[phases.install]
+commands = [
+  "bun install --dev"
+]
+
+[phases.build]
+commands = [
+  "bun run build"
+]
+
+[phases.start]
+commands = [
+  "nginx -g 'daemon off;' -c /app/nginx.conf"
+]
+
+[env]
+PORT = "80"
+
+[publish]
+dir = "build"
+
