@@ -1,11 +1,23 @@
 import React from 'react';
 import { config } from './data/config';
-import { experience } from './data/experience';
+import ParticleBackground from './components/ParticleBackground';
 import './App.css';
 
 const Portfolio: React.FC = () => {
+  const skills = [
+    'Excellent Problem Solver',
+    'Expert Debugger',
+    'Creative Thinker',
+    'Fast Learner',
+    'Team Collaborator',
+    'Detail-Oriented',
+    'Adaptable',
+    'Strong Communicator'
+  ];
+
   return (
     <div className="portfolio-container">
+      <ParticleBackground />
       <div className="content-wrapper">
         {/* Header Section */}
         <header className="header">
@@ -21,6 +33,18 @@ const Portfolio: React.FC = () => {
           </p>
         </section>
 
+        {/* Skills Section */}
+        <section className="skills">
+          <h2 className="section-title">Core Strengths</h2>
+          <div className="skills-grid">
+            {skills.map((skill, index) => (
+              <div key={index} className="skill-card">
+                <span className="skill-text">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Resume Download */}
         <div className="resume-section">
           <a
@@ -31,22 +55,6 @@ const Portfolio: React.FC = () => {
             Download Resume
           </a>
         </div>
-
-        {/* Experience Section */}
-        <section className="experience">
-          <h2 className="section-title">Experience</h2>
-          <div className="experience-list">
-            {experience.map((exp) => (
-              <div key={exp.id} className="experience-item">
-                <div className="experience-header">
-                  <h3 className="experience-position">{exp.position}</h3>
-                  <span className="experience-duration">{exp.duration}</span>
-                </div>
-                <p className="experience-company">{exp.company}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* Contact Section */}
         <section className="contact">
