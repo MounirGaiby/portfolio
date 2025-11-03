@@ -1,15 +1,12 @@
 /* Global styles and theme variables */
 :root {
-  --primary: #00ffff;
-  --secondary: #ff00ff;
-  --background: #0a0a0f;
-  --surface: #1a1a2e;
+  --primary: #ffffff;
+  --secondary: #cccccc;
+  --background: #000000;
+  --surface: #0a0a0a;
   --text: #ffffff;
-  --text-secondary: #b8b8d1;
-  --accent: #00ff88;
-  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --font-primary: "Orbitron", monospace;
-  --font-secondary: "Space Mono", monospace;
+  --text-secondary: #cccccc;
+  --accent: #ffffff;
   --duration: 0.3s;
   --easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -22,7 +19,9 @@
 
 body {
   margin: 0;
-  font-family: var(--font-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

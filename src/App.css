@@ -17,233 +17,331 @@ body {
 /* Main portfolio container */
 .portfolio-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #e0e0e0;
+  background: #000000;
+  color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Content wrapper */
 .content-wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 100px 40px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Header Section */
 .header {
-  margin-bottom: 48px;
+  margin-bottom: 80px;
   text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .name {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(3rem, 10vw, 5rem);
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
   line-height: 1.1;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .title {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  color: #a0a0a0;
-  margin-bottom: 8px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .location {
-  font-size: 1rem;
-  color: #808080;
-  font-weight: 400;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 /* About Section */
 .about {
-  margin-bottom: 48px;
+  margin-bottom: 80px;
   text-align: center;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .bio {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #c0c0c0;
-  max-width: 600px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
   margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Skills Section */
+.skills {
+  margin-bottom: 80px;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 48px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 32px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+
+.skill-text {
+  font-size: 1.125rem;
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 /* Resume Section */
 .resume-section {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
+  animation: fadeInUp 1.6s ease-out;
 }
 
 .resume-link {
   display: inline-block;
-  padding: 14px 32px;
-  background: #ffffff;
-  color: #1a1a2e;
+  padding: 18px 48px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  letter-spacing: 0.01em;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.resume-link:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .resume-link:hover {
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
 }
 
-/* Section Titles */
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 32px;
-  letter-spacing: -0.01em;
-}
-
-/* Experience Section */
-.experience {
-  margin-bottom: 64px;
-}
-
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.experience-item {
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.experience-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.experience-position {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-}
-
-.experience-duration {
-  font-size: 0.875rem;
-  color: #808080;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.experience-company {
-  font-size: 1rem;
-  color: #a0a0a0;
-  font-weight: 400;
+.resume-link span {
+  position: relative;
+  z-index: 1;
 }
 
 /* Contact Section */
 .contact {
-  margin-bottom: 32px;
+  margin-bottom: 60px;
+  animation: fadeInUp 1.8s ease-out;
 }
 
 .contact-links {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .contact-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 6px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding: 14px 32px;
+  border-radius: 50px;
   background: rgba(255, 255, 255, 0.05);
-  transition: all 0.2s ease;
-  letter-spacing: 0.01em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.contact-link:hover::before {
+  width: 200px;
+  height: 200px;
 }
 
 .contact-link:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .content-wrapper {
-    padding: 60px 24px;
+    padding: 80px 32px;
   }
 
   .header {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .about {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .bio {
+    font-size: 1.125rem;
+  }
+
+  .skills {
+    margin-bottom: 60px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-card {
+    padding: 20px 24px;
+  }
+
+  .skill-text {
     font-size: 1rem;
   }
 
   .resume-section {
-    margin-bottom: 48px;
+    margin-bottom: 60px;
   }
 
-  .experience {
-    margin-bottom: 48px;
-  }
-
-  .experience-list {
-    gap: 24px;
-  }
-
-  .experience-item {
-    padding-bottom: 24px;
-  }
-
-  .experience-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+  .resume-link {
+    padding: 16px 40px;
+    font-size: 1rem;
   }
 
   .contact-links {
     gap: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-link {
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .content-wrapper {
-    padding: 48px 20px;
+    padding: 60px 24px;
   }
 
-  .resume-link {
-    padding: 12px 28px;
-    font-size: 0.9375rem;
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
   }
 
   .section-title {
     font-size: 1.25rem;
   }
 
-  .experience-position {
-    font-size: 1.125rem;
+  .skills-grid {
+    gap: 12px;
+  }
+
+  .skill-card {
+    padding: 16px 20px;
   }
 }
