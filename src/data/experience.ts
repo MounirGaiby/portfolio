@@ -15,14 +15,18 @@ export const experience: Experience[] = [
     id: 'mib-tech',
     company: 'Mib-Tech',
     position: 'Software Engineer',
-    duration: 'Nov 2023 -- Present',
+    duration: 'Jun 2023 – Present',
     location: 'Casablanca, Morocco',
-    highlights: [
-      'Engineered and shipped Humaneo (SAAS HRIS platform)',
-      'Performance optimization: 40% API response speed improvement',
-      'ETL & Data Engineering with Airbyte and dbt',
-      'Test automation with RSpec/Capybara'
-    ],
-    technologies: ['Rails', 'Hotwire', 'Turbo', 'PostgreSQL', 'Redis', 'Airbyte', 'dbt']
+    highlights: [],
+    technologies: []
+  },
+  {
+    id: 'topela',
+    company: 'Topela',
+    position: 'Agile Software Developer',
+    duration: 'Jan 2022 – May 2023',
+    location: 'Remote',
+    highlights: [],
+    technologies: []
   }
 ];
